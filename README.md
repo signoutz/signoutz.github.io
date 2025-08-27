@@ -1,4 +1,4 @@
-# 👋 Hello, I'm signoutz  
+# 👋 Hello, I'm signOutz  
 
 ## About Me
 - 💻 Web Developer  
