@@ -84,11 +84,10 @@
             border-radius: 50%;
             border: 5px solid rgba(64, 224, 208, 0.3);
             margin: 0 auto 20px;
-            background: linear-gradient(45deg, #8B4513, #D2B48C);
+            background: radial-gradient(circle at 30% 30%, #2a2a4a, #1e1e3a);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 80px;
             position: relative;
             z-index: 1;
             transition: transform 0.3s ease;
@@ -97,32 +96,100 @@
         }
         
         .frenchie {
-            width: 100%;
-            height: 100%;
+            width: 120px;
+            height: 120px;
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
         }
         
+        /* French Bulldog Face */
         .frenchie::before {
             content: '';
             position: absolute;
-            width: 80px;
+            width: 90px;
             height: 80px;
-            background: #8B4513;
-            border-radius: 50% 50% 60% 60%;
-            top: 20%;
+            background: linear-gradient(145deg, #ffffff 0%, #f0f0f0 100%);
+            border-radius: 45px 45px 35px 35px;
+            top: 15px;
+            box-shadow: inset 2px 2px 4px rgba(0,0,0,0.1);
         }
         
+        /* Eyes */
         .frenchie::after {
-            content: '🐶';
+            content: '';
             position: absolute;
-            font-size: 60px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            filter: hue-rotate(30deg) brightness(1.2);
+            width: 12px;
+            height: 15px;
+            background: #2c2c2c;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            top: 35px;
+            left: 35px;
+            box-shadow: 25px 0 0 #2c2c2c, 
+                       -2px 3px 0px -8px rgba(255,255,255,0.3),
+                       23px 3px 0px -8px rgba(255,255,255,0.3);
+        }
+        
+        .nose {
+            position: absolute;
+            width: 8px;
+            height: 6px;
+            background: #1a1a1a;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            top: 50px;
+            left: 56px;
+            z-index: 10;
+        }
+        
+        /* Ears */
+        .ear-left, .ear-right {
+            position: absolute;
+            width: 20px;
+            height: 25px;
+            background: linear-gradient(145deg, #f5f5f5 0%, #e0e0e0 100%);
+            border-radius: 50% 20% 20% 50% / 80% 80% 20% 20%;
+            top: 10px;
+        }
+        
+        .ear-left {
+            left: 25px;
+            transform: rotate(-15deg);
+        }
+        
+        .ear-right {
+            right: 25px;
+            transform: rotate(15deg);
+        }
+        
+        /* Mouth area */
+        .mouth {
+            position: absolute;
+            width: 25px;
+            height: 15px;
+            background: linear-gradient(145deg, #f8f8f8 0%, #e8e8e8 100%);
+            border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
+            top: 60px;
+            left: 47px;
+            box-shadow: inset 0 2px 3px rgba(0,0,0,0.1);
+        }
+        
+        /* Black patches around eyes (typical for Frenchies) */
+        .patch-left, .patch-right {
+            position: absolute;
+            width: 15px;
+            height: 12px;
+            background: rgba(100, 100, 100, 0.2);
+            border-radius: 50%;
+            top: 32px;
+        }
+        
+        .patch-left {
+            left: 32px;
+        }
+        
+        .patch-right {
+            right: 32px;
         }
 
         .profile-img:hover {
@@ -303,9 +370,50 @@
             letter-spacing: 0.5px;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 1200px) {
             .container {
-                margin: 10px;
+                max-width: 95%;
+                margin: 10px auto;
+            }
+            
+            .info-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+        }
+
+        @media (max-width: 992px) {
+            body {
+                font-size: 11px;
+                padding: 15px;
+            }
+            
+            .header {
+                padding: 35px 25px;
+            }
+            
+            .content {
+                padding: 35px 25px;
+            }
+            
+            .section h2 {
+                font-size: 15px;
+                margin-bottom: 20px;
+            }
+            
+            .contact-methods {
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                font-size: 10px;
+                padding: 10px;
+                line-height: 1.6;
+            }
+            
+            .container {
+                margin: 5px;
                 border-radius: 15px;
             }
             
@@ -314,17 +422,279 @@
             }
             
             .header h1 {
-                font-size: 2em;
+                font-size: 20px;
+                margin-bottom: 12px;
+            }
+            
+            .header p {
+                font-size: 10px;
             }
             
             .content {
-                padding: 30px 20px;
+                padding: 25px 15px;
             }
             
             .profile-img {
                 width: 120px;
                 height: 120px;
-                font-size: 48px;
+            }
+            
+            .frenchie {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .frenchie::before {
+                width: 75px;
+                height: 65px;
+                border-radius: 37px 37px 28px 28px;
+                top: 12px;
+            }
+            
+            .frenchie::after {
+                width: 10px;
+                height: 12px;
+                top: 28px;
+                left: 28px;
+                box-shadow: 20px 0 0 #2c2c2c, 
+                           -2px 2px 0px -6px rgba(255,255,255,0.3),
+                           18px 2px 0px -6px rgba(255,255,255,0.3);
+            }
+            
+            .nose {
+                width: 6px;
+                height: 5px;
+                top: 40px;
+                left: 47px;
+            }
+            
+            .ear-left, .ear-right {
+                width: 16px;
+                height: 20px;
+                top: 8px;
+            }
+            
+            .ear-left {
+                left: 20px;
+            }
+            
+            .ear-right {
+                right: 20px;
+            }
+            
+            .mouth {
+                width: 20px;
+                height: 12px;
+                top: 48px;
+                left: 40px;
+            }
+            
+            .patch-left, .patch-right {
+                width: 12px;
+                height: 10px;
+                top: 26px;
+            }
+            
+            .patch-left {
+                left: 26px;
+            }
+            
+            .patch-right {
+                right: 26px;
+            }
+            
+            .section {
+                margin-bottom: 30px;
+            }
+            
+            .section h2 {
+                font-size: 14px;
+                margin-bottom: 18px;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .info-item {
+                padding: 15px;
+            }
+            
+            .skills {
+                gap: 8px;
+            }
+            
+            .skill-tag {
+                padding: 6px 10px;
+                font-size: 9px;
+                border-radius: 3px;
+            }
+            
+            .contact-methods {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            
+            .contact-item {
+                padding: 15px;
+            }
+            
+            .contact-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+            
+            .bio {
+                padding: 20px;
+                font-size: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 9px;
+                padding: 5px;
+            }
+            
+            .header h1 {
+                font-size: 18px;
+                letter-spacing: 1px;
+            }
+            
+            .header p {
+                font-size: 9px;
+            }
+            
+            .profile-img {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .frenchie {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .frenchie::before {
+                width: 60px;
+                height: 50px;
+                border-radius: 30px 30px 22px 22px;
+                top: 10px;
+            }
+            
+            .frenchie::after {
+                width: 8px;
+                height: 10px;
+                top: 22px;
+                left: 22px;
+                box-shadow: 16px 0 0 #2c2c2c, 
+                           -1px 2px 0px -5px rgba(255,255,255,0.3),
+                           15px 2px 0px -5px rgba(255,255,255,0.3);
+            }
+            
+            .nose {
+                width: 5px;
+                height: 4px;
+                top: 32px;
+                left: 37px;
+            }
+            
+            .ear-left, .ear-right {
+                width: 12px;
+                height: 15px;
+                top: 6px;
+            }
+            
+            .ear-left {
+                left: 16px;
+            }
+            
+            .ear-right {
+                right: 16px;
+            }
+            
+            .mouth {
+                width: 15px;
+                height: 10px;
+                top: 38px;
+                left: 32px;
+            }
+            
+            .patch-left, .patch-right {
+                width: 10px;
+                height: 8px;
+                top: 20px;
+            }
+            
+            .patch-left {
+                left: 20px;
+            }
+            
+            .patch-right {
+                right: 20px;
+            }
+            
+            .section h2 {
+                font-size: 12px;
+                margin-bottom: 15px;
+            }
+            
+            .content {
+                padding: 20px 10px;
+            }
+            
+            .info-item {
+                padding: 12px;
+            }
+            
+            .skill-tag {
+                padding: 5px 8px;
+                font-size: 8px;
+            }
+            
+            .contact-item {
+                padding: 12px;
+            }
+            
+            .contact-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 14px;
+                margin-bottom: 8px;
+            }
+            
+            .bio {
+                padding: 15px;
+                font-size: 9px;
+                line-height: 1.6;
+            }
+        }
+
+        @media (max-width: 320px) {
+            .header h1 {
+                font-size: 16px;
+            }
+            
+            .profile-img {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .frenchie {
+                width: 65px;
+                height: 65px;
+            }
+            
+            .section h2 {
+                font-size: 11px;
+            }
+            
+            .skill-tag {
+                font-size: 7px;
+                padding: 4px 6px;
             }
         }
     </style>
@@ -333,7 +703,14 @@
     <div class="container">
         <div class="header">
             <div class="profile-img">
-                <div class="frenchie"></div>
+                <div class="frenchie">
+                    <div class="ear-left"></div>
+                    <div class="ear-right"></div>
+                    <div class="nose"></div>
+                    <div class="mouth"></div>
+                    <div class="patch-left"></div>
+                    <div class="patch-right"></div>
+                </div>
             </div>
             <h1>signOutz</h1>
             <p>Web Developer & Blockchain Enthusiast</p>
