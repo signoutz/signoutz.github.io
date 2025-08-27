@@ -1,11 +1,211 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>signoutz</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#111827" />
+  <title>signoutz — Portfolio</title>
+  <meta name="description" content="หน้าแนะนำตัวแบบมินิมอลของ signoutz | Web Developer (PHP/CI3/JS/Bootstrap/Leaflet)" />
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0f14;         /* ดำอมฟ้า มินิมอล */
+      --card:#0f1520;
+      --fg:#e5e7eb;         /* เทาอ่อน */
+      --muted:#9ca3af;      /* เทากลาง */
+      --accent:#38bdf8;     /* ฟ้าใส */
+      --accent-2:#22d3ee;   /* ฟ้านีออนอ่อน */
+      --ring:0 0 0 2px var(--accent);
+      --radius:16px;
+      --maxw:920px;
+    }
+    @media (prefers-color-scheme: light){
+      :root{ --bg:#ffffff; --card:#f7f8fa; --fg:#0b1220; --muted:#6b7280; --accent:#2563eb; --accent-2:#06b6d4; }
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:"Prompt",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue","Noto Sans Thai",sans-serif;
+      background:radial-gradient(1000px 600px at 80% -10%,rgba(56,189,248,.18),transparent 60%),
+                 radial-gradient(900px 500px at -10% 10%,rgba(34,211,238,.14),transparent 55%),
+                 var(--bg);
+      color:var(--fg);
+      -webkit-font-smoothing:antialiased;
+      line-height:1.6;
+    }
+    .wrap{max-width:var(--maxw); margin-inline:auto; padding:24px; padding-bottom:72px}
+    header{display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:28px}
+    .brand{display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit}
+    .logo{
+      width:44px; height:44px; border-radius:50%;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:grid; place-items:center; font-weight:700; color:#001015;
+      box-shadow:0 10px 30px rgba(34,211,238,.25);
+    }
+    nav a{
+      color:var(--muted); text-decoration:none; margin-left:16px; font-weight:500; font-size:14px;
+    }
+    nav a:hover{color:var(--fg)}
+    .btn{
+      appearance:none; border:0; padding:12px 16px; border-radius:12px; cursor:pointer;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2)); color:#001015; font-weight:600;
+      box-shadow:0 8px 24px rgba(34,211,238,.25);
+    }
+    .btn-outline{
+      background:transparent; color:var(--fg); border:1px solid rgba(148,163,184,.25);
+    }
+    .grid{display:grid; gap:16px}
+    @media(min-width:720px){ .grid-2{grid-template-columns:1.1fr .9fr} }
+
+    /* Hero */
+    .hero{
+      display:grid; gap:16px; align-items:center; margin:10px 0 28px;
+    }
+    .tag{
+      display:inline-flex; gap:8px; align-items:center; padding:6px 10px;
+      border:1px solid rgba(148,163,184,.25); color:var(--muted); border-radius:999px; font-size:12px;
+      background:rgba(148,163,184,.06);
+      backdrop-filter:saturate(140%) blur(2px);
+    }
+    .title{font-size:28px; line-height:1.25; letter-spacing:.2px; margin:6px 0}
+    @media(min-width:540px){ .title{font-size:34px} }
+    .lead{color:var(--muted); font-size:15.5px}
+
+    /* Cards */
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.02), transparent 40%), var(--card);
+      border:1px solid rgba(148,163,184,.18);
+      border-radius:var(--radius);
+      padding:16px;
+    }
+    .card h3{margin:0 0 6px; font-size:16px}
+    .chips{display:flex; flex-wrap:wrap; gap:8px}
+    .chip{
+      font-size:12px; color:var(--fg); border:1px solid rgba(148,163,184,.25);
+      padding:6px 10px; border-radius:999px; background:rgba(148,163,184,.06)
+    }
+
+    /* Projects */
+    .proj{display:grid; gap:12px}
+    .proj a{color:var(--fg); text-decoration:none}
+    .proj a:hover{color:var(--accent)}
+
+    /* Contact */
+    .stack-sm{display:flex; gap:10px; flex-wrap:wrap}
+
+    footer{
+      margin-top:32px; color:var(--muted); font-size:13px; text-align:center
+    }
+
+    /* Focus */
+    a:focus-visible, button:focus-visible{outline: var(--ring)}
+  </style>
 </head>
 <body>
-    
+  <div class="wrap">
+    <header>
+      <a class="brand" href="#top" aria-label="กลับสู่บนสุด">
+        <span class="logo">S</span>
+        <strong>signoutz</strong>
+      </a>
+      <nav aria-label="เมนูหลัก">
+        <a href="#about">เกี่ยวกับ</a>
+        <a href="#skills">ทักษะ</a>
+        <a href="#projects">ผลงาน</a>
+        <a href="#contact">ติดต่อ</a>
+      </nav>
+    </header>
+
+    <main id="top" class="grid grid-2 hero">
+      <section>
+        <span class="tag">Web Developer • Thailand</span>
+        <h1 class="title">สวัสดี ผมคือ <strong>signoutz</strong><br/>พัฒนาเว็บด้วย PHP/CodeIgniter 3, JavaScript, Bootstrap และ Leaflet</h1>
+        <p class="lead">
+          โฟกัสงานระบบ REST API, ฟอร์มที่ลื่นไหลด้วย jQuery/AJAX และแดชบอร์ดที่อ่านง่าย
+          สนใจโครงการด้าน Low Carbon/Net Zero, แผนที่เชิงโต้ตอบ, และงานข้อมูลภาครัฐ
+        </p>
+        <div class="stack-sm" style="margin-top:10px">
+          <a class="btn" href="#contact">ติดต่อ/ว่าจ้าง</a>
+          <a class="btn btn-outline" href="#" onclick="alert('ใส่ลิงก์ไฟล์ CV ของคุณ'); return false;">ดาวน์โหลด CV</a>
+        </div>
+      </section>
+
+      <section class="card" aria-label="สรุปเร็ว">
+        <h3>สรุปเร็ว</h3>
+        <ul style="margin:6px 0 0 18px; padding:0">
+          <li>ถนัด CI3 + MySQL + jQuery</li>
+          <li>ทำงานกับข้อมูลภาครัฐและ API ภายนอก</li>
+          <li>ทำแผนที่ด้วย Leaflet และฐานข้อมูลพิกัด</li>
+          <li>เน้น UX ชัดเจน ใช้งานง่ายบนมือถือ</li>
+        </ul>
+      </section>
+    </main>
+
+    <section id="skills" class="card" aria-labelledby="skills-title">
+      <h3 id="skills-title">ทักษะหลัก</h3>
+      <div class="chips" style="margin-top:8px">
+        <span class="chip">PHP</span>
+        <span class="chip">CodeIgniter 3</span>
+        <span class="chip">MySQL</span>
+        <span class="chip">REST API</span>
+        <span class="chip">jQuery / AJAX</span>
+        <span class="chip">Bootstrap 5</span>
+        <span class="chip">Leaflet (แผนที่)</span>
+        <span class="chip">Highcharts / Chart.js</span>
+        <span class="chip">HTML/CSS</span>
+        <span class="chip">Linux Server</span>
+      </div>
+    </section>
+
+    <section id="projects" class="card" aria-labelledby="projects-title" style="margin-top:16px">
+      <h3 id="projects-title">ผลงานเด่น</h3>
+      <div class="proj">
+        <a href="#" onclick="alert('ใส่ลิงก์โปรเจกต์ของคุณ'); return false;">
+          • ระบบประเมินและติดตามการลดก๊าซเรือนกระจก อปท. (โมดูล 4.2)
+        </a>
+        <a href="#" onclick="alert('ใส่ลิงก์โปรเจกต์ของคุณ'); return false;">
+          • แดชบอร์ดคุณภาพอากาศและน้ำท่วมแบบเรียลไทม์ (Leaflet + API)
+        </a>
+        <a href="#" onclick="alert('ใส่ลิงก์โปรเจกต์ของคุณ'); return false;">
+          • R-SUB / CFE / CFP integrations บนเว็บองค์กร
+        </a>
+      </div>
+    </section>
+
+    <section id="about" class="card" aria-labelledby="about-title" style="margin-top:16px">
+      <h3 id="about-title">เกี่ยวกับฉัน</h3>
+      <p style="margin:8px 0 0">
+        นักพัฒนาเว็บที่ชอบแก้ปัญหาเชิงระบบ ใช้ข้อมูลจริง ขยายได้ และปรับแต่งให้ใช้งานง่ายบนมือถือ
+        ชอบทำงานเป็นสเต็ปชัดเจน วัดผลได้ และดูแลระบบหลังบ้านให้เสถียร
+      </p>
+    </section>
+
+    <section id="contact" class="card" aria-labelledby="contact-title" style="margin-top:16px">
+      <h3 id="contact-title">ติดต่อ</h3>
+      <div class="stack-sm" style="margin-top:6px">
+        <a class="btn" href="mailto:you@example.com">อีเมล</a>
+        <a class="btn btn-outline" href="https://github.com/yourname" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn btn-outline" href="https://www.linkedin.com/in/yourname" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn btn-outline" href="tel:+66123456789">โทร</a>
+      </div>
+    </section>
+
+    <footer>
+      © 2025 signoutz • สร้างด้วย HTML + CSS มินิมอล
+    </footer>
+  </div>
+
+  <!-- Schema.org สำหรับ SEO แบบย่อ -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"signoutz",
+    "jobTitle":"Web Developer",
+    "knowsAbout":["PHP","CodeIgniter 3","MySQL","REST API","jQuery","Bootstrap","Leaflet","Highcharts","Chart.js"],
+    "url":"https://3e.world"
+  }
+  </script>
 </body>
 </html>
