@@ -1,27 +1,27 @@
-# 👋 สวัสดีครับ ผมคือ signoutz  
+# 👋 Hello, I'm signoutz  
 
-## เกี่ยวกับผม
+## About Me
 - 💻 Web Developer  
-- 🔧 ถนัด PHP (CodeIgniter 3), MySQL, jQuery, AJAX  
-- 🎨 ชอบปรับแต่ง UI/UX ด้วย Bootstrap 5 และ Tailwind CSS  
-- 📊 ทำงานกับ Chart.js, Highcharts และ Leaflet สำหรับ data visualization และ mapping  
-- 🔗 สนใจ Blockchain / Web3 และ Smart Contract พื้นฐาน  
+- 🔧 Skilled in PHP (CodeIgniter 3), MySQL, jQuery, AJAX  
+- 🎨 Passionate about UI/UX customization with Bootstrap 5 and Tailwind CSS  
+- 📊 Experienced with Chart.js, Highcharts, and Leaflet for data visualization and mapping  
+- 🔗 Interested in Blockchain / Web3 and basic Smart Contracts  
 
-## โปรเจกต์ที่สนใจ
-- 🌱 ระบบจัดการข้อมูลด้านสิ่งแวดล้อม (Carbon Footprint, Net Zero, BCG Economy)  
-- 🐾 ระบบติดตามสัตว์เลี้ยงด้วย GPS + IoT  
-- 📱 เว็บแอปที่ responsive รองรับการใช้งานบนมือถือ  
-- ⚡ Next.js + TypeScript สำหรับเว็บสมัยใหม่  
-- ⛓️ การเชื่อมต่อ Blockchain / Web3 กับ IoT และ Data Platform  
+## Projects of Interest
+- 🌱 Environmental data management systems (Carbon Footprint, Net Zero, BCG Economy)  
+- 🐾 Pet tracking systems with GPS + IoT integration  
+- 📱 Responsive web applications optimized for mobile use  
+- ⚡ Modern web apps with Next.js + TypeScript  
+- ⛓️ Blockchain / Web3 integration with IoT and data platforms  
 
-## สิ่งที่กำลังทำ
-- พัฒนา Dashboard สำหรับองค์กร/ชุมชน  
-- ทดลอง Next.js และการ deploy บน Vercel และ GitHub Pages  
-- ศึกษา Smart Contract เบื้องต้นกับ Solidity และ Viem.js / ethers.js  
+## Current Focus
+- Developing dashboards for organizations and communities  
+- Experimenting with Next.js and deployment on Vercel and GitHub Pages  
+- Learning Solidity basics and experimenting with Viem.js / ethers.js for smart contracts  
 
-## ติดต่อ
-- 🌐 เว็บไซต์: [signoutz.com](https://signoutz.com)  
-- ✉️ อีเมล: aunkaffpom@gmail.com
+## Contact
+- 🌐 Website: [signoutz.com](https://www.signoutz.com/)  
+- ✉️ Email: yourname@example.com  
 - 📌 GitHub: [@signoutz](https://github.com/signoutz)  
 
 ---
